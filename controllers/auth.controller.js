@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bycrypt from "bycrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import user from "../models/user.model.js";
 import { JWT_SECRET, JWT_EXPIRES_IN } from "../config/env.js";
@@ -17,7 +17,7 @@ export const signUp = async (req, res, next) => {
             return res.status(400).json({ message: "User already exists" });
         }
         //hash the password
-        const salt = await bycrypt.gensalt(10);
+        const salt = await bycrypt.genSalt(10);
         const hashedPassword = await bycrypt.hash(password, salt);
         //create the user
         const newUser = await User.create([{
