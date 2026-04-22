@@ -1,0 +1,6 @@
+{
+  "eslint.options": {
+    "overrideConfigFile": "C:\\Users\\Dell\\Desktop\\Subscription Tracker\\eslint.config.js"
+  },
+  "eslint.useFlatConfig": true
+}
